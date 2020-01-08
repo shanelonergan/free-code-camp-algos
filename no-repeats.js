@@ -42,7 +42,13 @@ p1 = ['aab', 'aab', 'aba', 'aba', 'baa', 'baa']
 p1Arrays = p1.map(perm => perm.split(''))
 console.log(p1Arrays)
 
+// helpers
 
+ const toArrays = (stringArr) => {
+     return stringArr.map(perm => perm.split(''))
+ }
+
+console.log(toArrays(p1))
 
 function permAlone(str) {
   return str;
