@@ -18,7 +18,23 @@
 
 // PSEUDOCODE
 // input = 'aab'
-// permutations =
+// permutations = ['aab', 'aab', 'aba', 'aba', 'baa', 'baa']
+// final = []
+
+// permArrays = permutations.map(perm => perm.split(''))
+
+// permArrays.forEach((perm) => {
+//     perm.forEach((letter, index) => {
+//         next = perm[index + 1]
+
+//         if (letter === next) {
+//             // remove from origonal array
+//             permArrays.unshift(perm)
+//         }
+//     })
+// })
+
+// solution = permArrays.length
 
 function permAlone(str) {
   return str;
