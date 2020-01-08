@@ -47,7 +47,8 @@ p1 = ['aab', 'aab', 'aba', 'aba', 'baa', 'baa']
  }
 
  const removeDuplicates = (element, index, array) => {
-     next = perm[index + 1]
+     console.log(element)
+     const next = element[index + 1]
         console.log(next, 'next')
 
         if (letter === next) {
@@ -60,10 +61,8 @@ p1Arrays = toArrays(p1)
 
 console.log(p1Arrays)
 
-p1Arrays.forEach((perm) => {
-    perm.forEach((letter, index) => {
-
-    })
+p1Arrays.forEach(perm => {
+    perm.forEach((removeDuplicates)
 
     console.log(p1Arrays)
 })
