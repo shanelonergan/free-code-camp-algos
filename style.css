@@ -1,0 +1,13 @@
+body {
+    background-color: rgb(47, 47, 47);
+}
+
+#main-text {
+    color: rgb(184, 129, 255);
+    font-weight: bold;
+    font-size: 5vh;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    justify-self: center;
+    padding-top: 40vh;
+}
