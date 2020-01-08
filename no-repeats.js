@@ -36,6 +36,14 @@
 
 // solution = permArrays.length
 
+// testing
+
+p1 = ['aab', 'aab', 'aba', 'aba', 'baa', 'baa']
+p1Arrays = p1.map(perm => perm.split(''))
+console.log(p1Arrays)
+
+
+
 function permAlone(str) {
   return str;
 }
