@@ -39,8 +39,6 @@
 // testing
 
 p1 = ['aab', 'aab', 'aba', 'aba', 'baa', 'baa']
-p1Arrays = p1.map(perm => perm.split(''))
-console.log(p1Arrays)
 
 // helpers
 
@@ -48,7 +46,27 @@ console.log(p1Arrays)
      return stringArr.map(perm => perm.split(''))
  }
 
-console.log(toArrays(p1))
+ const removeDuplicates = (element, index, array) => {
+     next = perm[index + 1]
+        console.log(next, 'next')
+
+        if (letter === next) {
+            // remove from origonal array
+            p1Arrays.splice(index, 1)
+        }
+ }
+
+p1Arrays = toArrays(p1)
+
+console.log(p1Arrays)
+
+p1Arrays.forEach((perm) => {
+    perm.forEach((letter, index) => {
+
+    })
+
+    console.log(p1Arrays)
+})
 
 function permAlone(str) {
   return str;
