@@ -46,24 +46,30 @@ const toArrays = stringArr => {
     return stringArr.map(perm => perm.split(''));
 };
 
-const removeDuplicates = (element, index, array) => {
-    console.log(array, 'current array');
-    const next = array[index + 1];
-    console.log(next, 'next');
-
-    if (element === next) {
-        // remove from origonal array
-        console.log(p1Arrays.splice(index, 1), 'removed');
-        p1Arrays.splice(index, 1);
-    }
-};
-
-
 function permAlone(arr) {
+    const removeDuplicates = (element, index, array) => {
+        console.log(array, 'current array');
+        const next = array[index + 1];
+        console.log(element, next, 'current and next');
+
+        if (next === undefined) {
+            return
+        }
+
+        debugger
+
+        if (element === next) {
+            // remove from origonal array
+            console.log(p1Arrays.splice(index, 1), 'removed');
+            p1Arrays.splice(index, 1);
+        }
+    };
+
     let p1Arrays = toArrays(p1);
     console.log(p1Arrays, 'starting arr');
 
-    arr.forEach(perm => {
+    p1Arrays.forEach(perm => {
+        // debugger
         perm.forEach(removeDuplicates);
 
         console.log(p1Arrays);
