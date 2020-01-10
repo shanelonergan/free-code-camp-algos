@@ -48,6 +48,11 @@ const toArrays = stringArr => {
 
 function permAlone(arr) {
     // debugger
+
+    let p1Arrays = toArrays(arr);
+    console.log(arr)
+    console.log(p1Arrays, 'starting arr');
+
     const removeDuplicates = (element, index, array) => {
         console.log(array, 'current array');
         const next = array[index + 1];
@@ -63,10 +68,6 @@ function permAlone(arr) {
         }
     };
 
-    let p1Arrays = toArrays(arr);
-    console.log(arr)
-    console.log(p1Arrays, 'starting arr');
-
     p1Arrays.forEach(perm => {
         // debugger
         perm.forEach(removeDuplicates);
@@ -77,6 +78,6 @@ function permAlone(arr) {
 
 permAlone(p1);
 
-// while (i < ) {
+while (i < arr.length) {
 
-// }
+}
