@@ -47,25 +47,24 @@ const toArrays = stringArr => {
 };
 
 function permAlone(arr) {
+    // debugger
     const removeDuplicates = (element, index, array) => {
         console.log(array, 'current array');
         const next = array[index + 1];
         console.log(element, next, 'current and next');
 
         if (next === undefined) {
+            console.log('undefined')
             return
-        }
-
-        debugger
-
-        if (element === next) {
+        } else if (element === next) {
             // remove from origonal array
             console.log(p1Arrays.splice(index, 1), 'removed');
             p1Arrays.splice(index, 1);
         }
     };
 
-    let p1Arrays = toArrays(p1);
+    let p1Arrays = toArrays(arr);
+    console.log(arr)
     console.log(p1Arrays, 'starting arr');
 
     p1Arrays.forEach(perm => {
@@ -77,3 +76,7 @@ function permAlone(arr) {
 }
 
 permAlone(p1);
+
+// while (i < ) {
+
+// }
