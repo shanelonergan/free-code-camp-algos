@@ -78,6 +78,24 @@ function permAlone(arr) {
 
 permAlone(p1);
 
-while (i < arr.length) {
+const newSolution = (arr) => {
+    const toArrays = stringArr => {
+        return stringArr.map(perm => perm.split(''));
+    };
+
+    const arrays = toArrays(arr)
+
+
+
+    while (i < arr.length) {
+        const current = arr[i]
+        const previous = arr[i - 1]
+
+        if (i = 0) return
+        if (current === previous) {
+
+        }
+    }
 
 }
+
