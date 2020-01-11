@@ -86,22 +86,27 @@ const newSolution = (arr) => {
     const arrays = toArrays(arr)
     let final = [...arrays]
     const stringLength = arrays[0].length
+    const stringArrayLength = stringLength - 1
+    console.log(arrays, stringLength) // good
 
     firstIndex = 0
     secondIndex = 0
     while (firstIndex <= arrays.length) {
 
         while (secondIndex <= stringLength - 1) {
-            const current = arr[secondIndex]
-            const previous = arr[secondIndex - 1]
+            // const current = arr[secondIndex]
+            // const previous = arr[secondIndex - 1]
 
-            if (secondIndex = 0) continue
-            if (current === previous) {
-                final.slice(secondIndex, 1)
-            }
+            // if (secondIndex = 0) continue
+            // if (current === previous) {
+            //     final.slice(secondIndex, 1)
+            // }
+            console.log(secondIndex)
 
             secondIndex++
         }
+
+        console.log(firstIndex)
 
         firstIndex++
     }
