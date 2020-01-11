@@ -89,23 +89,28 @@ const newSolution = (arr) => {
     const stringArrayLength = stringLength - 1
     console.log(arrays, stringLength) // good
 
-    firstIndex = 0
+    let firstIndex = 0
 
     arrays.forEach(stringArr => {
-        secondIndex = 0
+        let secondIndex = 0
 
          while (secondIndex <= stringLength - 1) {
-            const current = arrays[secondIndex]
-            const previous = arrays[secondIndex - 1]
-
+            const current = stringArr[secondIndex]
+            const previous = stringArr[secondIndex - 1]
+            let pass = true
+            console.log(secondIndex, previous, current)
             // if (secondIndex = 0) continue
             if (current === previous) {
-                final.slice(secondIndex, 1)
+                console.log('removing', firstIndex)
+                // debugger
+                pass = false
+                secondIndex++
+            } else {
+                secondIndex++
             }
-            console.log(previous, current)
-
-            secondIndex++
         }
+
+        firstIndex++
     })
 
     console.log(final)
