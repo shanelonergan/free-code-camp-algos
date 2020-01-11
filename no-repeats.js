@@ -36,91 +36,68 @@
 
 // solution = permArrays.length
 
-// testing
+const newSolution = str => {
+    const startArr = str.split('');
+    const permutations = [];
+    let tmp;
 
-p1 = ['aab', 'aab', 'aba', 'aba', 'baa', 'baa'];
+    function swap(index1, index2) {
+        tmp = startArr[index1];
+        startArr[index1] = startArr[index2];
+        startArr[index2] = tmp;
+    }
 
-// helpers
-
-const toArrays = stringArr => {
-    return stringArr.map(perm => perm.split(''));
-};
-
-function permAlone(arr) {
-    // debugger
-
-    let p1Arrays = toArrays(arr);
-    console.log(arr)
-    console.log(p1Arrays, 'starting arr');
-
-    const removeDuplicates = (element, index, array) => {
-        console.log(array, 'current array');
-        const next = array[index + 1];
-        console.log(element, next, 'current and next');
-
-        if (next === undefined) {
-            console.log('undefined')
-            return
-        } else if (element === next) {
-            // remove from origonal array
-            console.log(p1Arrays.splice(index, 1), 'removed');
-            p1Arrays.splice(index, 1);
+    // Generate arrays of permutations using the algorithm.
+    function generate(int) {
+        if (int === 1) {
+            // Make sure to join the characters as we create  the permutation arrays
+            permutations.push(startArr.join(''));
+        } else {
+            for (var i = 0; i != int; ++i) {
+                generate(int - 1);
+                swap(int % 2 ? 0 : i, int - 1);
+            }
         }
-    };
+    }
 
-    p1Arrays.forEach(perm => {
-        // debugger
-        perm.forEach(removeDuplicates);
+    generate(startArr.length);
 
-        console.log(p1Arrays);
-    });
-}
+    let final = [];
+    const stringLength = permutations[0].length;
+    const stringArrayLength = stringLength - 1;
+    console.log(stringLength, stringArrayLength);
 
-// permAlone(p1);
+    let firstIndex = 0;
 
-const newSolution = (arr) => {
-    const toArrays = stringArr => {
-        return stringArr.map(perm => perm.split(''));
-    };
+    permutations.forEach(stringArr => {
+        let secondIndex = 0;
+        let pass = true;
 
-    const arrays = toArrays(arr)
-    let final = []
-    const stringLength = arrays[0].length
-    const stringArrayLength = stringLength - 1
-    console.log(arrays, stringLength) // good
+        while (secondIndex <= stringLength - 1) {
+            const current = stringArr[secondIndex];
+            const previous = stringArr[secondIndex - 1];
 
-    let firstIndex = 0
-
-    arrays.forEach(stringArr => {
-        let secondIndex = 0
-        let pass = true
-
-         while (secondIndex <= stringLength - 1) {
-            const current = stringArr[secondIndex]
-            const previous = stringArr[secondIndex - 1]
-
-            console.log(secondIndex, previous, current)
+            console.log(secondIndex, previous, current);
             // if (secondIndex = 0) continue
             if (current === previous) {
-                console.log('removing', firstIndex)
+                console.log('removing', firstIndex);
                 // debugger
-                pass = false
-                secondIndex++
+                pass = false;
+                secondIndex++;
             } else {
-                secondIndex++
+                secondIndex++;
             }
         }
 
         if (pass === true) {
-            final.push(stringArr)
+            final.push(stringArr);
         }
 
-        firstIndex++
-    })
+        firstIndex++;
+    });
 
-    console.log(final)
+    console.log(final);
+    return final.length
+};
 
-}
-
-newSolution(p1)
-
+newSolution('abcdefa');
