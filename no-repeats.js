@@ -90,26 +90,23 @@ const newSolution = (arr) => {
     console.log(arrays, stringLength) // good
 
     firstIndex = 0
-    secondIndex = 0
-    while (firstIndex <= arrays.length) {
 
-        while (secondIndex <= stringLength - 1) {
-            // const current = arr[secondIndex]
-            // const previous = arr[secondIndex - 1]
+    arrays.forEach(stringArr => {
+        secondIndex = 0
+
+         while (secondIndex <= stringLength - 1) {
+            const current = arrays[secondIndex]
+            const previous = arrays[secondIndex - 1]
 
             // if (secondIndex = 0) continue
-            // if (current === previous) {
-            //     final.slice(secondIndex, 1)
-            // }
-            console.log(secondIndex)
+            if (current === previous) {
+                final.slice(secondIndex, 1)
+            }
+            console.log(previous, current)
 
             secondIndex++
         }
-
-        console.log(firstIndex)
-
-        firstIndex++
-    }
+    })
 
     console.log(final)
 
