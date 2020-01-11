@@ -84,7 +84,7 @@ const newSolution = (arr) => {
     };
 
     const arrays = toArrays(arr)
-    let final = [...arrays]
+    let final = []
     const stringLength = arrays[0].length
     const stringArrayLength = stringLength - 1
     console.log(arrays, stringLength) // good
@@ -93,11 +93,12 @@ const newSolution = (arr) => {
 
     arrays.forEach(stringArr => {
         let secondIndex = 0
+        let pass = true
 
          while (secondIndex <= stringLength - 1) {
             const current = stringArr[secondIndex]
             const previous = stringArr[secondIndex - 1]
-            let pass = true
+
             console.log(secondIndex, previous, current)
             // if (secondIndex = 0) continue
             if (current === previous) {
@@ -108,6 +109,10 @@ const newSolution = (arr) => {
             } else {
                 secondIndex++
             }
+        }
+
+        if (pass === true) {
+            final.push(stringArr)
         }
 
         firstIndex++
