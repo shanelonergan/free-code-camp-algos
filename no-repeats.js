@@ -84,17 +84,20 @@ const newSolution = (arr) => {
     };
 
     const arrays = toArrays(arr)
+    let final = [...arrays]
 
 
 
-    while (i < arr.length) {
+    while (i <= arr.length) {
         const current = arr[i]
         const previous = arr[i - 1]
 
-        if (i = 0) return
+        if (i = 0) continue
         if (current === previous) {
 
         }
+
+        i++
     }
 
 }
