@@ -85,16 +85,19 @@ const newSolution = (arr) => {
 
     const arrays = toArrays(arr)
     let final = [...arrays]
+    const stringLength = arrays[0].length
 
+    firstIndex = 0
+    secondIndex = 0
+    while (firstIndex <= arrays.length) {
 
-
-    while (i <= arr.length) {
+        while (secondIndex <= )
         const current = arr[i]
         const previous = arr[i - 1]
 
         if (i = 0) continue
         if (current === previous) {
-
+            final.slice()
         }
 
         i++
