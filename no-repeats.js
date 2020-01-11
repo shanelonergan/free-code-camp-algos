@@ -76,7 +76,7 @@ function permAlone(arr) {
     });
 }
 
-permAlone(p1);
+// permAlone(p1);
 
 const newSolution = (arr) => {
     const toArrays = stringArr => {
@@ -91,17 +91,24 @@ const newSolution = (arr) => {
     secondIndex = 0
     while (firstIndex <= arrays.length) {
 
-        while (secondIndex <= )
-        const current = arr[i]
-        const previous = arr[i - 1]
+        while (secondIndex <= stringLength - 1) {
+            const current = arr[secondIndex]
+            const previous = arr[secondIndex - 1]
 
-        if (i = 0) continue
-        if (current === previous) {
-            final.slice()
+            if (secondIndex = 0) continue
+            if (current === previous) {
+                final.slice(secondIndex, 1)
+            }
+
+            secondIndex++
         }
 
-        i++
+        firstIndex++
     }
 
+    console.log(final)
+
 }
+
+newSolution(p1)
 
