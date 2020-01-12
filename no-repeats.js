@@ -101,3 +101,7 @@ const newSolution = str => {
 };
 
 newSolution('abcdefa');
+
+const refactoredSolution = () => {
+    const regex = ([a-z])\1
+}
