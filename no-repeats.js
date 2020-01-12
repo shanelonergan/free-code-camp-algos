@@ -114,7 +114,7 @@ const refactoredSolution = (str) => {
     // if all characters in the string are identical, return 0
     if (str.match(regex) !== null && str.match(regex)[0] === str) return 0;
 
-       function swap(index1, index2) {
+    function swap(index1, index2) {
         tmp = startArr[index1];
         startArr[index1] = startArr[index2];
         startArr[index2] = tmp;
@@ -123,10 +123,10 @@ const refactoredSolution = (str) => {
     // Generate arrays of permutations using Heap's algorithm.
     function generate(int) {
         if (int === 1) {
-            // Make sure to join the characters as we create  the permutation arrays
+            // Make sure to join the characters as we create the permutation arrays
             permutations.push(startArr.join(''));
         } else {
-            for (var i = 0; i != int; ++i) {
+            for (var i = 0; i !== int; ++i) {
                 generate(int - 1);
                 swap(int % 2 ? 0 : i, int - 1);
             }
