@@ -100,8 +100,49 @@ const newSolution = str => {
     return final.length
 };
 
-newSolution('abcdefa');
+// newSolution('abcdefa');
 
-const refactoredSolution = () => {
-    const regex = ([a-z])\1
+const refactoredSolution = (str) => {
+
+    // check for matching consecutive letters
+    const regex = /([a-z])\1/;
+
+    const startArr = str.split('');
+    const permutations = [];
+    let tmp;
+
+    // if all characters in the string are identical, return 0
+    if (str.match(regex) !== null && str.match(regex)[0] === str) return 0;
+
+       function swap(index1, index2) {
+        tmp = startArr[index1];
+        startArr[index1] = startArr[index2];
+        startArr[index2] = tmp;
+    }
+
+    // Generate arrays of permutations using Heap's algorithm.
+    function generate(int) {
+        if (int === 1) {
+            // Make sure to join the characters as we create  the permutation arrays
+            permutations.push(startArr.join(''));
+        } else {
+            for (var i = 0; i != int; ++i) {
+                generate(int - 1);
+                swap(int % 2 ? 0 : i, int - 1);
+            }
+        }
+    }
+
+    generate(startArr.length);
+
+    const filtered = permutations.filter(function(string) {
+        return !string.match(regex);
+    });
+
+    console.log(filtered)
+    return filtered.length;
+
 }
+
+refactoredSolution('aab')
+
