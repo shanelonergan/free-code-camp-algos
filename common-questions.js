@@ -46,10 +46,20 @@ let solution2 = () => {
 // Non-looping solution
 
 const noLoop = () => {
+
     const isMultiple = (num, mod) => {
         return num % mod === 0 // returns true or false
     }
-}
 
+    const solution = [...Array(100)].map((_, i) => {
+        const num = i + 1
 
-solution2()
+        switch (true) {
+
+            case isMultiple(num, 15): return 'FizzBuzz'
+            case isMultiple(num, 3): return 'Fizz'
+            case isMultiple(num, 5): 'Buzz'
+            default: return num
+        }
+    }
+}).join('|')
