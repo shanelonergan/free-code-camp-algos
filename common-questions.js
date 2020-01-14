@@ -43,4 +43,13 @@ let solution2 = () => {
     }
 }
 
+// Non-looping solution
+
+const noLoop = () => {
+    const isMultiple = (num, mod) => {
+        return num % mod === 0 // returns true or false
+    }
+}
+
+
 solution2()
