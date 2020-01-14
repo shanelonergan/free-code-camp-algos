@@ -61,5 +61,8 @@ const noLoop = () => {
             case isMultiple(num, 5): 'Buzz'
             default: return num
         }
-    }
-}).join('|')
+    }).join('|')
+
+    console.log(solution)
+}
+noLoop()
