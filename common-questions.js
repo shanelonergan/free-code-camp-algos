@@ -58,10 +58,10 @@ const noLoop = () => {
 
             case isMultiple(num, 15): return 'FizzBuzz'
             case isMultiple(num, 3): return 'Fizz'
-            case isMultiple(num, 5): 'Buzz'
+            case isMultiple(num, 5): return 'Buzz'
             default: return num
         }
-    }).join('|')
+    }).join('\n')
 
     console.log(solution)
 }
