@@ -65,10 +65,24 @@ const fbNoLoop = () => {
 
     console.log(solution)
 }
-fbNoLoop()
+// fbNoLoop()
 
 ////////////////////////////////////////// Fibonacci /////////////////////////////////////////////////////
 
 // write a function to return the Nth number of he Fibonacci sequence
 
+const fib = (n) => {
 
+    let solution
+
+    if (n < 2) {
+        solution = n
+    } else {
+        solution = fib(n-1) + fib(n-2)
+    }
+
+    console.log(solution)
+    return solution
+}
+
+fib(20)
