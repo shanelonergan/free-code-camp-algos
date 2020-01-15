@@ -71,6 +71,14 @@ const fbNoLoop = () => {
 
 // write a function to return the Nth number of he Fibonacci sequence
 
+function basicFib(n) {
+    if (n < 2) {
+        return n
+    }
+
+    return fib(n-1) + fib(n-2)
+}
+
 const fib = (n) => {
 
     let solution
