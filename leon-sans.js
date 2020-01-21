@@ -6,7 +6,8 @@ const pixelRatio = 2
 
 function init() {
     canvas = document.createElement('canvas')
-    document.body.appendChild(canvas)
+    div = document.getElementById('main-div')
+    div.appendChild(canvas)
     ctx = canvas.getContext('2d')
 
     canvas.width = sw * pixelRatio
